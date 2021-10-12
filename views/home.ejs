@@ -1,0 +1,37 @@
+<div style="width: 2000px" class="container mt-3 border border-success bg-light">
+  <div class="container d-flex justify-content-between p-3 mt-3">
+    <a href="/add">
+      <button type="button" class="btn btn-primary ms-3">Tambah Hutang</button>
+    </a>
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Cari Pelanggan" aria-label="Search" />
+      <button class="btn btn-outline-success justify-content-end" type="submit">Cari</button>
+    </form>
+  </div>
+  <div style="height: 450px" class="overflow-scroll">
+    <table class="table table-striped me-4 mt-4 overflow-scroll">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Nama Pelanggan</th>
+          <th scope="col">Teima</th>
+          <th scope="col">Berikan</th>
+          <th scope="col">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% let i = 1 %> <% costumers.forEach(costumer => { %>
+        <tr>
+          <td><%= i %></td>
+          <td><%= costumer.nama %></td>
+          <td><%= costumer.terima %></td>
+          <td><%= costumer.berikan %></td>
+          <td>
+            <a class="badge rounded-pill bg-info text-dark" href="costumer/<%= costumer.id %> ">Detail</a>
+          </td>
+        </tr>
+        <% i++ %> <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
