@@ -122,27 +122,8 @@ app.put("/update", (req, res) => {
 });
 
 //
-const port = 3000;
+const port =process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);
 });
-// db.costumer.updateOne(
-//   { nama: "bayu" },
-//   {
-//     $set: {
-//       nama: "kawaki",
-//       terima: "30",
-//       berikan: "40",
-//     },
-//   }
-// );
-// // db.costumer.updateOne(
-// //   {
-// //     nama: "bayu",
-// //   },
-// //   {
-// //     nama: "kawaki",
-// //     terima: "30",
-// //     berikan: "40",
-// //   }
-// // );
+
